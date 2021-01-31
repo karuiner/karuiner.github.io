@@ -249,14 +249,10 @@ function number_check(inp) {
                 order -= 1;
                 console.log(order, Math.abs(n * 10 ** order));
             }
-            order -= 1;
+            order += 1;
             n = n * 10 ** order;
-            let a = n - (n % 1),
-                b = n % 1,
-                li = 7;
-            ck = 0;
-            b = b.toFixed(8);
-            inp = `${a + parseFloat(b)}e${-order}`;
+
+            inp = `${n.toFixed(8)}e${-order}`;
         } else if (Math.abs(n) < 1e-12) {
             let order = 12;
             while (Math.abs(n * 10 ** order) >= 1) {

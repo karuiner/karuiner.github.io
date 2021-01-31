@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: "monospace", cursive;
+    color: #000;
+}
+
+body {
+    background: white;
+    background-image: url("./sky-690293.jpg");
+    background-size: cover;
+}
+
+.upper_moniter {
+    background: white;
+    width: 500px;
+    height: 30px;
+    font-size: 16px;
+    text-align: right;
+    vertical-align: middle;
+    padding: 25px 15px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+.lower_moniter {
+    background: white;
+    width: 500px;
+    height: 80px;
+    font-size: 35px;
+    text-align: right;
+    vertical-align: top;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    /* background: grey; */
+    background-size: 90px;
+    background-color: grey;
+    width: 530px;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 155px 0 0 grey inset, 0 0 20px 5px rgba(103, 56, 56, 0.262), 3px 3px 0 0 darkgrey(189, 109, 109);
+    border: solid 6px grey;
+    border-bottom: solid 6px grey;
+    padding: 2px 10px 0px 10px;
+}
+
+.buttons {
+    /* background: grey; */
+    background-size: 90px;
+    background-color: grey;
+    width: 480px;
+    height: 250px;
+    border: solid 6px grey;
+    border-radius: 50%;
+}
+
+.button_low1 {
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
+    width: 480px;
+    height: 50px;
+}
+
+.button_low2 {
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
+    width: 480px;
+    height: 50px;
+}
+
+.button_low3 {
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
+    width: 480px;
+    height: 50px;
+}
+
+.button_low4 {
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
+    width: 480px;
+    height: 50px;
+}
+
+.button_low5 {
+    display: flex;
+    vertical-align: middle;
+    justify-content: space-between;
+    width: 480px;
+    height: 50px;
+}
+
+/* key 스타일 */
+
+.number {
+    background: palegreen;
+    border: solid 6px palegreen;
+    border-radius: 25%;
+}
+
+.operator {
+    background: goldenrod;
+    box-sizing: border-box;
+    border: solid 6px goldenrod;
+    border-radius: 50%;
+}
+
+.fbutton {
+    background: goldenrod;
+    box-sizing: border-box;
+    border: solid 6px goldenrod;
+    border-radius: 50%;
+}
+
+.clear {
+    background: goldenrod;
+    box-sizing: border-box;
+    border: solid 6px goldenrod;
+    border-radius: 50%;
+}
+
+.decimal {
+    background: palegreen;
+    box-sizing: border-box;
+    border: solid 6px palegreen;
+    border-radius: 25%;
+}
+
+.Enter {
+    background: palegreen;
+    box-sizing: border-box;
+    border: solid 6px palegreen;
+    border-radius: 25%;
+}
+
+#Rad {
+    opacity: 1;
+}
+#Deg {
+    opacity: 0.3;
+}
+.key {
+    font-size: 13;
+    width: 45px;
+    height: 45px;
+}
+
+.key:hover {
+    background: skyblue;
+    border: solid 6px skyblue;
+}
+
+.not_allow {
+    background: black;
+    border: solid 6px black;
+    opacity: 0.4;
+    cursor: not-allowed;
+}

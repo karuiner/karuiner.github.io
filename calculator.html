@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>User calculator</title>
+        <link rel="stylesheet" href="./calculator.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="calculator">
+                <div class="upper_moniter"></div>
+                <div class="lower_moniter">0</div>
+                <div class="buttons">
+                    <div class="button_low1">
+                        <button class="fbutton key" , id="Rad">Rad</button>
+                        <button class="fbutton key" , id="Deg">Deg</button>
+                        <button class="fbutton key" accesskey="!">x!</button>
+                        <button class="fbutton key" accesskey="(">(</button>
+                        <button class="fbutton key" accesskey=")">)</button>
+                        <button class="fbutton key" accesskey="%">%</button>
+                        <button class="clear key" >CE</button>
+                    </div>
+                    <div class="button_low2">
+                        <button class="fbutton key">Inv</button>
+                        <button class="fbutton key" id="sin">sin</button>
+                        <button class="fbutton key" id="asin" style='display: none;'>sin<sup>-1</sup></button>
+                        <button class="fbutton key" id='ln'>ln</button>
+                        <button class="fbutton key" id='inv_ln' style='display: none;'>e<sup>x</sup></button>
+                        <button class="number key" accesskey="7">7</button>
+                        <button class="number key" accesskey="8">8</button>
+                        <button class="number key" accesskey="9">9</button>
+                        <button class="operator key" id='divide' accesskey="/">&divide</button>
+                    </div>
+                    <div class="button_low3">
+                        <button class="fbutton key" id='pi'>&#960</button>
+                        <button class="fbutton key" id="cos">cos</button>
+                        <button class="fbutton key" id="acos" style='display: none;'>cos<sup>-1</sup></button>
+                        <button class="fbutton key" id='log'>log</button>
+                        <button class="fbutton key" id='inv_log' style='display: none;'>10<sup>x</sup></button>
+                        <button class="number key" accesskey="4">4</button>
+                        <button class="number key" accesskey="5">5</button>
+                        <button class="number key" accesskey="6">6</button>
+                        <button class="operator key" id='times' accesskey="*"> &times</button>
+                    </div>
+                    <div class="button_low4">
+                        <button class="fbutton key">e</button>
+                        <button class="fbutton key" id="tan">tan</button>
+                        <button class="fbutton key" id="atan" style='display: none;'>tan<sup>-1</sup></button>
+                        <button class="fbutton key" id='sqrt'>&#8730</button>
+                        <button class="fbutton key" id='inv_sqrt' style='display: none;'>x<sup>2<sup/p></button>
+                        <button class="number key" accesskey="1">1</button>
+                        <button class="number key" accesskey="2">2</button>
+                        <button class="number key" accesskey="3">3</button>
+                        <button class="operator key" id='minus' accesskey="-">-</button>
+                    </div>
+                    <div class="button_low5">
+                        <button class="fbutton key" id='Ans'>Ans</button>
+                        <button class="fbutton key" id='Rnd' style='display: none;'>Rnd</button>
+                        <button class="fbutton key">EXP</button>
+                        <button class="fbutton key" id="power">x<sup>y</sup></button>
+                        <button class="fbutton key not_allow" id="inv_power" style='display: none;'><sup>y</sup>√x</button>
+                        <button class="number key" accesskey="0">0</button>
+                        <button class="decimal key" accesskey=".">.</button>
+                        <button class="Enter key" accesskey="=">=</button>
+                        <button class="operator key" id='plus' accesskey="+">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./calculator.js"></script>
+    </body>
+</html>

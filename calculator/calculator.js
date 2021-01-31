@@ -245,7 +245,7 @@ function number_check(inp) {
         let n = parseFloat(inp);
         if (Math.abs(n) > 1e12) {
             let order = -12;
-            while (Math.abs(n * 10 ** order) <= 1) {
+            while (Math.abs(n * 10 ** order) >= 1) {
                 order -= 1;
                 console.log(order, Math.abs(n * 10 ** order));
             }

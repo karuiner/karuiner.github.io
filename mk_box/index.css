@@ -1,0 +1,47 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: "monospace", cursive;
+    color: #000;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.button_line {
+    display: flex;
+    height: 60px;
+    width: 100%;
+    justify-content: space-evenly;
+    flex: 0 0 0;
+    background: skyblue;
+}
+
+.button {
+    display: inline-flexbox;
+    height: 50px;
+    width: 100px;
+    background: black;
+    color: white;
+}
+
+.container {
+    height: 60px;
+    width: 100%;
+    flex: 1 0 0;
+    background: ivory;
+}
+
+.box {
+    display: inline-block;
+    width: 10%;
+    height: 10%;
+    background: cornflowerblue;
+    border-radius: 25%;
+}

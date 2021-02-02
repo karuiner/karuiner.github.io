@@ -84,6 +84,7 @@ body {
 .main__lists--list--input {
     display: flex;
     vertical-align: middle;
+
     flex: 1 0 0;
     font-size: 25px;
 }

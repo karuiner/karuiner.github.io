@@ -14,13 +14,18 @@ body {
 }
 
 nav {
+    display: flex;
     flex: 1 0 0;
 }
 
 main {
+    display: flex;
+
     flex: 6 0 0;
 }
 
 aside {
+    display: flex;
+
     flex: 3 0 0;
 }

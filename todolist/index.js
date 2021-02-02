@@ -76,8 +76,9 @@ function fail_function(event) {
 }
 
 function remove_function(event) {
-    target.style.backgroundColor = "black";
-    console.log(event, target);
-    target.textContent = event.target.textContent;
+    //    console.log(event, target);
+    target.parentNode.remove();
+    //    target.style.backgroundColor = "black";
+    //    target.textContent = event.target.textContent;
     board.style.display = "none";
 }

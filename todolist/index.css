@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: "monospace", cursive;
+    color: #000;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    background-image: url("./sky-690293.jpg");
+    background-size: cover;
+}
+
+.area {
+    display: flex;
+    flex: 1 0 0;
+}
+
+.main {
+    display: flex;
+    flex: 2 0 0;
+    flex-direction: column;
+    border-radius: 30px;
+    background: white;
+    border: solid 1px gold;
+    box-shadow: 3px 3px 3px 3px #999;
+}
+
+.main__title {
+    text-align: center;
+    font-size: 50px;
+    color: steelblue;
+    height: 60px;
+    margin: 0px 0px 20px 0px;
+    text-shadow: 4px 2px 2px gray;
+    width: 100%;
+    flex: 0 0 0;
+}
+
+.main__lists {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-items: center;
+    width: 100%;
+    flex: 1 0 0;
+}
+
+.main__add_button {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    background: chartreuse;
+    border-radius: 50%;
+}
+
+.main__lists--list-sample {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 60px;
+    border-radius: 30px;
+    justify-content: center;
+    padding: 10px;
+    margin: 8px 5% 8px 5%;
+    box-shadow: 3px 3px 3px 3px #999;
+}
+
+.main__lists--list--text {
+    display: flex;
+    vertical-align: middle;
+    flex: 1 0 0;
+    font-size: 25px;
+}
+
+.main__lists--list--input {
+    display: flex;
+    vertical-align: middle;
+    flex: 1 0 0;
+    font-size: 25px;
+}
+
+.main__lists--list--function_button {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+}

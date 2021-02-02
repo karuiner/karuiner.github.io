@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="index.css" />
+        <title>todolist</title>
+    </head>
+    <body>
+        <div class="area"></div>
+        <div class="main">
+            <div class="main__title">To do list</div>
+            <div class="main__lists" style="z-index: 1">
+                <div class="main__lists--list-sample" style="z-index: 1; display: none">
+                    <span class="main__lists--list--text"></span>
+                    <input type="text" class="main__lists--list--input" style="display: none" placeholder="당신의 할일은?" />
+                    <button class="main__lists--list--function_button"></button>
+                </div>
+
+                <button class="main__add_button" style="z-index: 2">+</button>
+            </div>
+        </div>
+        <div class="area"></div>
+    </body>
+    <script src="index.js"></script>
+</html>

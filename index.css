@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: "monospace", cursive;
+    color: #000;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+nav {
+    flex: 1 0 0;
+}
+
+main {
+    flex: 6 0 0;
+}
+
+aside {
+    flex: 3 0 0;
+}

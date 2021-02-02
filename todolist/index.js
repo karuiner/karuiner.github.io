@@ -64,17 +64,20 @@ function bfunction(event) {
 function success_function(event) {
     target.style.backgroundColor = "Green";
     console.log(event, target);
+    target.textContent = event.target.textContent;
     board.style.display = "none";
 }
 
 function fail_function(event) {
     target.style.backgroundColor = "red";
     console.log(event, target);
+    target.textContent = event.target.textContent;
     board.style.display = "none";
 }
 
 function remove_function(event) {
     target.style.backgroundColor = "black";
     console.log(event, target);
+    target.textContent = event.target.textContent;
     board.style.display = "none";
 }

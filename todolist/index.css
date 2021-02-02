@@ -93,6 +93,10 @@ body {
     height: 40px;
     width: 40px;
     flex: 0 0 auto;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    justify-content: center;
     border-radius: 50%;
 }
 

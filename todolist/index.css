@@ -104,3 +104,37 @@ body {
     border-radius: 50%;
     background: yellow;
 }
+.b_sel {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    color: white;
+    font-size: 30px;
+
+    flex: 1 0 auto;
+    text-align: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.selection_board {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    left: -10px;
+    top: 90px;
+    padding: 5px;
+    height: 50px;
+    width: 130px;
+    background: white;
+    border-radius: 10px;
+}
+
+.success {
+    background: green;
+}
+.fail {
+    background: red;
+}
+.remove {
+    background: black;
+}

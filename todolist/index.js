@@ -1,11 +1,17 @@
 const lists = document.querySelector(".main__lists");
 const sample = document.querySelector(".main__lists--list-sample");
 const add_button = document.querySelector(".main__add_button");
-const function_button = document.querySelector(".main__lists--list--function_button");
+const board = document.querySelector(".selection_board");
+
+let function_buttons = document.querySelectorAll(".main__lists--list--function_button");
 let checker = true,
     text = "",
     target,
     max_list = false;
+
+board.children[0].onclick = success_function;
+board.children[1].onclick = fail_function;
+board.children[2].onclick = remove_function;
 
 add_button.addEventListener("click", function (event) {
     let check = "";
@@ -40,10 +46,35 @@ function get_text() {
             max_list = true;
             add_button.style.backgroundColor = "red";
         }
+        function_buttons = document.querySelectorAll(".main__lists--list--function_button");
+        console.log(function_buttons);
+        function_buttons[function_buttons.length - 1].onclick = bfunction;
     }
 }
 
-function_button.addEventListener("click", function (event) {
-    console.log(event);
-    console.dir(event);
-});
+function bfunction(event) {
+    target = event.target;
+    let x = event.x,
+        y = event.y;
+    board.style.top = `${y - 25}px`;
+    console.log(target, x, y);
+    board.style.display = "";
+}
+
+function success_function(event) {
+    target.style.backgroundColor = "Green";
+    console.log(event, target);
+    board.style.display = "none";
+}
+
+function fail_function(event) {
+    target.style.backgroundColor = "red";
+    console.log(event, target);
+    board.style.display = "none";
+}
+
+function remove_function(event) {
+    target.style.backgroundColor = "black";
+    console.log(event, target);
+    board.style.display = "none";
+}

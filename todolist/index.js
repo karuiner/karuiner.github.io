@@ -107,13 +107,10 @@ function local_remove(k) {
 }
 
 function nth(target) {
-    console.log(target);
     let n = lists.childElementCount;
     let childs = lists.children,
         ans = 2;
-    console.log(n, childs);
     for (let i = 2; i < n; i++) {
-        console.log(i, childs[i] === target);
         if (childs[i] === target) {
             ans = i;
         }
@@ -126,13 +123,11 @@ function bfunction(event) {
     let x = event.x,
         y = event.y;
     board.style.top = `${y - 25}px`;
-    console.log(target, x, y);
     board.style.display = "";
 }
 
 function success_function(event) {
     target.style.backgroundColor = "Green";
-    console.log(event, target);
     target.textContent = event.target.textContent;
     board.style.display = "none";
     let k = nth(target.parentNode);
@@ -149,7 +144,6 @@ function fail_function(event) {
 
 function remove_function(event) {
     let k = nth(target.parentNode);
-    console.log(k);
     local_remove(k);
     target.parentNode.remove();
     board.style.display = "none";

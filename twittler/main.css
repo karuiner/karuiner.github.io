@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+}
+
+#greeting {
+    font-size: 3em;
+    font-family: sans-serif;
+    font-weight: bold;
+    border: 2px solid #ccc;
+    border-radius: 1em;
+    color: white;
+    background-color: #69cfff;
+    text-shadow: 0 0 5px #333;
+    text-align: center;
+    margin: 0.5em;
+    padding: 0.5em;
+    flex: 1 0 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-attachment: fixed;
+    background-image: url("./sky-690293.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+}
+
+.sideArea {
+    flex: 10 0 0;
+}
+
+.mainArea {
+    flex: 3 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.namemessage {
+    font-size: 1em;
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    color: black;
+    background-color: #69cfff;
+    /* padding-top: 25%; */
+    flex: 4 0 0;
+}
+.dividearea {
+    font-size: 1em;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #ccc;
+    border-radius: 1em;
+    background-color: #69cfff;
+    margin: 0.5em;
+    padding: 0.5em;
+    flex: 2 0 0;
+}
+
+.sendtomessage {
+    flex: 4 0 0;
+    display: flex;
+    background-color: #69cfff;
+    vertical-align: middle;
+    align-items: flex-end;
+}
+
+#sendbutton {
+    background-color: #69cfff;
+    background-image: url("./letter.jpg");
+    background-size: cover;
+    height: 100px;
+    width: 100px;
+    border: 0px;
+}
+
+.area3 {
+    display: flex;
+    flex-direction: column;
+    flex: 10 0 0;
+}
+
+#commentbutton {
+    border: 2px solid #ccc;
+    border-radius: 1em;
+    background: #69cfff;
+    margin: 0.5em;
+    padding: 0.5em;
+    height: 3em;
+}
+
+.linecomment {
+    display: flex;
+    flex-direction: column;
+    background: #69cfff;
+    border: 2px solid #ccc;
+    border-radius: 1em;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+
+.nametime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 1.5em;
+}
+.name {
+    font-weight: bold;
+}
+#normal:hover,
+#back:hover,
+.name:hover {
+    color: blue;
+}
+
+.comment {
+    min-height: 1.5em;
+}
+.inputA {
+    display: flex;
+    flex: 1 1 0;
+}
+
+.inputB {
+    display: flex;
+    flex: 5 1 0;
+}
+
+.heart {
+    background-color: #69cfff;
+    background-image: url("./heart.png");
+    background-size: cover;
+    margin-right: 2em;
+    width: 30px;
+    height: 25px;
+    border: 0px;
+}
+
+.reply {
+    background-color: #69cfff;
+    background-image: url("./talk.png");
+    background-size: cover;
+    margin-right: 2em;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+}
+
+.retweet {
+    background-color: #69cfff;
+    background-image: url("./recycle.png");
+    background-size: cover;
+    margin-right: 2em;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+}
+
+.logo {
+    display: inline-block;
+    background-color: #69cfff;
+    background-image: url("./tonaido.jpg");
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+}
+.etc {
+    display: flex;
+    flex-direction: row;
+    height: 1.5em;
+}
+.etc_count {
+    display: flex;
+    flex: 1 0 0;
+}
+
+#back {
+    display: none;
+    font-size: 1.5em;
+    color: black;
+    background: #69cfff;
+}
+#normal {
+    display: inline;
+    font-size: 1.5em;
+    color: black;
+    background: #69cfff;
+}
+
+.fbutton_style {
+    background: #69cfff;
+    width: 100%;
+    border: 3px solild gold;
+    border-radius: 1em;
+}

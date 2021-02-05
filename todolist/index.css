@@ -97,6 +97,7 @@ body {
     font-size: 30px;
     color: white;
     text-align: center;
+    background: silver;
     justify-content: center;
     border-radius: 50%;
 }

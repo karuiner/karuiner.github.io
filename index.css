@@ -11,20 +11,33 @@ body {
     display: flex;
     flex-direction: row;
     height: 100vh;
+    background-image: url("./opmp/mountains-919040_1920.jpg");
+    background-size: cover;
 }
 
 nav {
     display: flex;
     flex-direction: column;
     flex: 2 0 0;
+    border: solid 1px white;
 }
 
 main {
     display: flex;
     flex: 5 0 0;
+    border: solid 1px black;
+    opacity: 0.5;
 }
 
 aside {
     display: flex;
     flex: 3 0 0;
+    background: grey;
+    border: solid 1px grey;
+    opacity: 0.3;
+}
+
+.text {
+    font-family: monospace;
+    font-size: 1.2em;
 }

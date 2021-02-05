@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: "monospace", cursive;
+    color: #000;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+
+.main {
+    display: flex;
+    flex: 0 0 0;
+    height: 100%;
+    width: 100%;
+}
+
+.active {
+    flex: 1 0 0;
+    display: flex;
+}
+
+.page1 {
+    background-image: url("./sky-690293.jpg");
+    background-size: cover;
+}
+
+.page2 {
+    background-image: url("./beach.jpg");
+    background-size: cover;
+}
+
+.page3 {
+    background-image: url("./background.jpg");
+    background-size: cover;
+}
+
+.page4 {
+    background-image: url("./horizon.jpg");
+    background-size: cover;
+}
+
+.page5 {
+    background-image: url("./sunset.jpg");
+    background-size: cover;
+}
+
+.page6 {
+    background-image: url("./lightning.jpg");
+    background-size: cover;
+}
+
+.page7 {
+    background-image: url("./grindelwald.jpg");
+    background-size: cover;
+}
+
+.page8 {
+    background-image: url("./mountains-919040_1920.jpg");
+    background-size: cover;
+}
+
+.page9 {
+    background-image: url("./dock-1979547_1920.jpg");
+    background-size: cover;
+}

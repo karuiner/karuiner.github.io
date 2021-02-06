@@ -102,12 +102,59 @@ body {
 
 /* main css */
 
+.main_page {
+    border: solid 5px white;
+}
+
+.area {
+    border: solid 1px white;
+}
+
+/* main talk window */
+
+.talk {
+    display: flex;
+    padding: 20px;
+}
+
+.talk_window {
+    display: flex;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: solid 1px white;
+}
+.talk_list,
+.talk_input_frame {
+    display: flex;
+    border: solid 1px white;
+}
+
+.talk1 {
+    display: flex;
+    flex: 1 0 0;
+}
+
+.talk8 {
+    display: flex;
+    flex: 8 0 0;
+}
+
 /* 공용 속성 */
 
 .title {
     font-size: 200px;
     font-weight: 500;
     position: absolute;
+    color: black;
+    text-shadow: -1px 0 aqua, 0 2px aqua, 2px 0 aqua, 0 -1px aqua;
+}
+
+.title_s {
+    display: flex;
+    justify-content: center;
+    font-size: 100px;
+    font-weight: 500;
+    text-align: center;
     color: black;
     text-shadow: -1px 0 aqua, 0 2px aqua, 2px 0 aqua, 0 -1px aqua;
 }
@@ -119,7 +166,7 @@ body {
     z-index: 2;
 }
 
-.colurm {
+.column {
     flex-direction: column;
 }
 
@@ -129,17 +176,14 @@ body {
 
 .line {
     display: flex;
-    flex-direction: row;
     flex: 1 0 0;
 }
 .line2 {
     display: flex;
-    flex-direction: row;
     flex: 2 0 0;
 }
 .line3 {
     display: flex;
-    flex-direction: row;
     flex: 3 0 0;
 }
 

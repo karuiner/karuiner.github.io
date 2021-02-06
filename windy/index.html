@@ -7,13 +7,13 @@
         <title>Document</title>
     </head>
     <body>
-        <div class="full_page login_page colurm active">
+        <div class="full_page login_page column active">
             <div class="title visible pnanum z1 top50">Windy</div>
             <!-- 로그인 인터페이스 -->
-            <div class="login_window visible z2">
+            <div class="login_window column visible z2">
                 <div class="line3 vmid wmid"><input type="text" placeholder="user name" class="login_input username vmid pnanum" /></div>
                 <div class="line3 vmid wmid"><input type="text" placeholder="password" class="login_input password vmid pnanum" /></div>
-                <div class="line2 space login_button">
+                <div class="line2 space row login_button">
                     <button class="login_window_button button_l line vmid wmid pnanum">회원 가입</button>
                     <button class="login_window_button button_r line vmid wmid pnanum">로그인</button>
                 </div>
@@ -31,20 +31,34 @@
                         title="비밀번호는 최소 8글자 최대 24글자까지 허용하며 최소 한개의 영문자 특수문자 숫자를 포함해야합니다. "
                     />
                 </div>
-                <div class="line2 space login_button">
+                <div class="line2 space row login_button">
                     <button class="login_window_button button_l line vmid wmid pnanum">취소</button>
                     <button class="login_window_button button_r line vmid wmid pnanum">가입</button>
                 </div>
             </div>
             <div class="login_window invisible z2"></div>
         </div>
-        <div class="full_page main_page deactive">
-            <div class="area_sns line"></div>
-            <div class="area_main line">
-                <div class="pnanum title">Windy</div>
+        <!-- 메인 페이지 -->
+        <div class="full_page main_page row deactive">
+            <!-- sns 영역 -->
+            <div class="area column sns line"></div>
+            <!-- 유저 인포메이션 영역 -->
+            <div class="area column wmid info line">
+                <div class="pnanum title_s talk1">Windy</div>
+                <div class="talk8"></div>
+                <div class="talk8"></div>
             </div>
-            <div class="area_talk line"></div>
+            <!-- 메신저 영역 -->
+            <div class="area line column talk">
+                <div class="talk_list talk1">대화방 목록 <span class="list_button">&bigtriangledown;</span></div>
+                <div class="talk_window talk8"></div>
+                <div class="talk_input_frame column talk1 space">
+                    <div class="talk_target talk1">everyone<span class="list_button">&bigtriangleup;</span></div>
+                    <textarea cols="80" style="resize: none" class="talk_input_window talk1"></textarea>
+                </div>
+            </div>
         </div>
+        <!-- 미정 메인 페이지 -->
         <div class="full_page deactive"></div>
     </body>
     <script src="index.js"></script>

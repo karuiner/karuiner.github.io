@@ -7,8 +7,8 @@
         <title>Document</title>
     </head>
     <body>
-        <div class="main_page login_page colurm active">
-            <div class="title visible pnanum z1">Windy</div>
+        <div class="full_page login_page colurm active">
+            <div class="title visible pnanum z1 top50">Windy</div>
             <!-- 로그인 인터페이스 -->
             <div class="login_window visible z2">
                 <div class="line3 vmid wmid"><input type="text" placeholder="user name" class="login_input username vmid pnanum" /></div>
@@ -20,8 +20,17 @@
             </div>
             <!-- 회원가입 인터페이스 -->
             <div class="login_window invisible z2">
-                <div class="line3 vmid wmid"><input type="text" placeholder="user name" class="login_input username vmid pnanum" /></div>
-                <div class="line3 vmid wmid"><input type="text" placeholder="password" class="login_input password vmid pnanum" /></div>
+                <div class="line3 vmid wmid">
+                    <input type="text" placeholder="user name" class="login_input username vmid pnanum" title="ID는 최소 8글자 최대 14글자가 허용되며 영문과 숫자를 포함할수 있습니다." />
+                </div>
+                <div class="line3 vmid wmid">
+                    <input
+                        type="text"
+                        placeholder="password"
+                        class="login_input password vmid pnanum"
+                        title="비밀번호는 최소 8글자 최대 24글자까지 허용하며 최소 한개의 영문자 특수문자 숫자를 포함해야합니다. "
+                    />
+                </div>
                 <div class="line2 space login_button">
                     <button class="login_window_button button_l line vmid wmid pnanum">취소</button>
                     <button class="login_window_button button_r line vmid wmid pnanum">가입</button>
@@ -29,8 +38,14 @@
             </div>
             <div class="login_window invisible z2"></div>
         </div>
-        <div class="main_page"></div>
-        <div class="main_page"></div>
+        <div class="full_page main_page deactive">
+            <div class="area_sns line"></div>
+            <div class="area_main line">
+                <div class="pnanum title">Windy</div>
+            </div>
+            <div class="area_talk line"></div>
+        </div>
+        <div class="full_page deactive"></div>
     </body>
     <script src="index.js"></script>
 </html>

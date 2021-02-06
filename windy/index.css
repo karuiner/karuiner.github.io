@@ -19,15 +19,14 @@ body {
     flex-direction: row;
 }
 /* 메인 페이지 css 넣어둘것 */
-.main_page {
+.full_page {
     display: flex;
-    flex: 0 0 0;
     height: 100%;
     width: 100%;
+    background: linear-gradient(45deg, rgb(84, 255, 135), rgb(69, 214, 250));
 }
 
 .login_page {
-    background: linear-gradient(45deg, rgb(84, 255, 135), rgb(69, 214, 250));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,6 +35,14 @@ body {
 .active {
     flex: 1 0 0;
     display: flex;
+}
+
+.deactive {
+    flex: 0 0 0;
+    display: none;
+}
+.top50 {
+    top: 50px;
 }
 
 /* 로그인 창 css  */
@@ -93,9 +100,18 @@ body {
     transition: 0.4s;
 }
 
-/*  */
+/* main css */
 
 /* 공용 속성 */
+
+.title {
+    font-size: 200px;
+    font-weight: 500;
+    position: absolute;
+    color: black;
+    text-shadow: -1px 0 aqua, 0 2px aqua, 2px 0 aqua, 0 -1px aqua;
+}
+
 .z1 {
     z-index: 1;
 }

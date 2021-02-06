@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0px;
+    box-sizing: border-box;
+    font-family: "monospace", cursive;
+    color: #000;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+}
+/* 메인 페이지 css 넣어둘것 */
+.main_page {
+    display: flex;
+    flex: 0 0 0;
+    height: 100%;
+    width: 100%;
+}
+
+.login_page {
+    background: linear-gradient(45deg, rgb(84, 255, 135), rgb(69, 214, 250));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    flex: 1 0 0;
+    display: flex;
+}
+
+/* 로그인 창 css  */
+.login_window {
+    height: 300px;
+    width: 400px;
+    flex-direction: column;
+    background: linear-gradient(225deg, rgb(84, 255, 135), rgb(69, 214, 250));
+    border-radius: 30px;
+    border: solid 1px rgb(84, 255, 135);
+}
+
+/*  */
+
+/* 공용 속성 */
+.line {
+    flex: 1 0 0;
+}
+
+.visible {
+    display: flex;
+}
+
+.unvisible {
+    display: none;
+}

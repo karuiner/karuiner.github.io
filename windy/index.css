@@ -1,3 +1,9 @@
+/* 공통 영역 */
+@font-face {
+    font-family: "Nanum_pen";
+    src: url("./Nanum_Pen_Script/NanumPenScript-Regular.ttf");
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -41,12 +47,57 @@ body {
     border-radius: 30px;
     border: solid 1px rgb(84, 255, 135);
 }
+.login_input {
+    display: inline-block;
+
+    font-size: 50px;
+    height: 1em;
+    background: rgb(69, 214, 250);
+    margin: 5px;
+    border-radius: 10px;
+    border: solid 1px rgb(84, 255, 135);
+}
+.login_button {
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+.login_window_button {
+    font-size: 30px;
+    background: inherit;
+    border: solid 1px rgb(84, 255, 135);
+    opacity: 0.5;
+}
+.button_r {
+    border-bottom-right-radius: 30px;
+}
+
+.button_l {
+    border-bottom-left-radius: 30px;
+}
 
 /*  */
 
 /* 공용 속성 */
 .line {
+    display: flex;
+    flex-direction: row;
     flex: 1 0 0;
+}
+.line2 {
+    display: flex;
+    flex-direction: row;
+    flex: 2 0 0;
+}
+.vmid {
+    vertical-align: middle;
+}
+.wmid {
+    justify-content: center;
+
+    text-align: center;
+}
+.space {
+    justify-content: space-between;
 }
 
 .visible {
@@ -55,4 +106,8 @@ body {
 
 .unvisible {
     display: none;
+}
+
+.pnanum {
+    font-family: "Nanum_pen";
 }

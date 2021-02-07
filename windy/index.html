@@ -39,22 +39,45 @@
             <div class="login_window invisible z2"></div>
         </div>
         <!-- 메인 페이지 -->
-        <div class="full_page main_page row deactive">
-            <!-- sns 영역 -->
-            <div class="area column sns line"></div>
-            <!-- 유저 인포메이션 영역 -->
-            <div class="area column wmid info line">
-                <div class="pnanum title_s talk1">Windy</div>
-                <div class="talk8"></div>
-                <div class="talk8"></div>
-            </div>
-            <!-- 메신저 영역 -->
-            <div class="area line column talk">
-                <div class="talk_list talk1">대화방 목록 <span class="list_button">&bigtriangledown;</span></div>
-                <div class="talk_window talk8"></div>
-                <div class="talk_input_frame column talk1 space">
-                    <div class="talk_target talk1">everyone<span class="list_button">&bigtriangleup;</span></div>
-                    <textarea cols="80" style="resize: none" class="talk_input_window talk1"></textarea>
+        <div class="full_page main_page column deactive">
+            <div class="app_area row">
+                <!-- sns 영역 -->
+                <div class="line fh sns_line">
+                    <!-- 클로즈 버튼 상태 -->
+                    <div class="area column active closed_frame">
+                        <div class="close_button column">sns closed</div>
+                    </div>
+                    <!-- 오픈상태 -->
+                    <div class="area column sns deactive"></div>
+                </div>
+                <!-- 유저 인포메이션 영역 -->
+                <div class="line fh info_line">
+                    <!-- 인포메이션 클로즈 상태 , 하지만 필요한가? -->
+                    <div class="area column active closed_frame">
+                        <div class="close_button column">information closed</div>
+                    </div>
+                    <!-- 인포메이션 오픈 상태 -->
+                    <div class="area column wmid info deactive">
+                        <div class="pnanum title_s talk1">Windy</div>
+                        <div class="talk8"></div>
+                        <div class="talk8"></div>
+                    </div>
+                </div>
+                <!-- 메신저 영역 -->
+                <div class="line fh talk_line">
+                    <!-- 메신저 클로즈 상태 -->
+                    <div class="area column active closed_frame">
+                        <div class="close_button column">talk closed</div>
+                    </div>
+                    <!-- 메신저 오픈 상태 -->
+                    <div class="area column talk deactive">
+                        <div class="talk_list talk1">대화방 목록 <span class="list_button">&bigtriangledown;</span></div>
+                        <div class="talk_window talk8"></div>
+                        <div class="talk_input_frame column talk1 space">
+                            <div class="talk_target talk1">everyone<span class="list_button">&bigtriangleup;</span></div>
+                            <textarea style="resize: none" class="talk_input_window talk1"></textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

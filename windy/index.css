@@ -21,8 +21,8 @@ body {
 /* 메인 페이지 css 넣어둘것 */
 .full_page {
     display: flex;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
     background: linear-gradient(45deg, rgb(84, 255, 135), rgb(69, 214, 250));
 }
 
@@ -32,15 +32,6 @@ body {
     align-items: center;
 }
 
-.active {
-    flex: 1 0 0;
-    display: flex;
-}
-
-.deactive {
-    flex: 0 0 0;
-    display: none;
-}
 .top50 {
     top: 50px;
 }
@@ -109,6 +100,34 @@ body {
 .area {
     border: solid 1px white;
 }
+.app_area {
+    display: flex;
+}
+
+.closed_frame {
+    height: 5%;
+    justify-content: flex-end;
+}
+
+.close_button {
+    height: 47px;
+    display: flex;
+    color: rgb(158, 255, 48);
+    background: rgba(0, 66, 75, 0.959);
+    text-align: center;
+    justify-content: center;
+    transform-origin: 50% 100%;
+    bottom: 0;
+}
+/* main sns window */
+.sns {
+    display: flex;
+}
+
+/* main information window */
+.info {
+    display: none;
+}
 
 /* main talk window */
 
@@ -138,6 +157,12 @@ body {
     display: flex;
     flex: 8 0 0;
 }
+/* main 공용 */
+.main_page.deactive .sns,
+.main_page.deactive .info,
+.main_page.deactive .talk {
+    display: none;
+}
 
 /* 공용 속성 */
 
@@ -157,6 +182,10 @@ body {
     text-align: center;
     color: black;
     text-shadow: -1px 0 aqua, 0 2px aqua, 2px 0 aqua, 0 -1px aqua;
+}
+
+.fh {
+    height: 100vh;
 }
 
 .z1 {
@@ -209,4 +238,14 @@ body {
 
 .pnanum {
     font-family: "Nanum_pen";
+}
+
+.active {
+    flex: 1 0 0;
+    display: flex;
+}
+
+.deactive {
+    flex: 0 0 0;
+    display: none;
 }

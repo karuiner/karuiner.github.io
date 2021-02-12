@@ -52,7 +52,6 @@ function mvsine(timestamp) {
         if (x > 0.05 && target.style.diplay === "none") {
             target.style.diplay = "";
         } else if (x > 0.95 && target.style.diplay === "") {
-            x = x > 0.95 ? 0.95 : x;
             target.style.diplay = "none";
         }
 

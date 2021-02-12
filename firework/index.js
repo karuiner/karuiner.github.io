@@ -29,7 +29,7 @@ function move_and_explosion(target, t) {
     setTimeout(explosion, t * 1000, target);
 }
 
-function mk_fragment(target) {
+function mk_fragment(target, r) {
     let n_frag = document.createElement("div");
     n_frag.classList.add("fragment");
     n_frag.style.background = "#" + get_rgb_random_color();
@@ -38,7 +38,6 @@ function mk_fragment(target) {
     n_frag.style.animation = `5s ease-out fade`;
     n_frag.style.animationTimingFunction = "ease-out";
     n_frag.style.transition = "5s";
-    let r = 100;
     let theta = Math.random() * 2 * Math.PI;
     let x = r * Math.cos(theta),
         y = r * Math.sin(theta);
@@ -52,8 +51,11 @@ function explosion_move(target, x, y) {
 }
 
 function explosion(target) {
-    for (let i = 0; i < 20; i++) {
-        setTimeout(mk_fragment, 0, target);
+    for (let i = 0; i < 40; i++) {
+        r = 100 + (2 - Math.random()) * 30;
+        setTimeout(mk_fragment, 0, target, r);
+        setTimeout(mk_fragment, 0, target, r);
+        setTimeout(mk_fragment, 0, target, r);
     }
     target.style.transition = `0.1s`;
     target.style.backgroundColor = "white";

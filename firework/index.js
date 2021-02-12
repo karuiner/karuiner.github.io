@@ -67,12 +67,17 @@ function dying_light(target) {
 }
 
 body.addEventListener("click", function (event) {
-    setTimeout(mk_dot(), 0);
+    let l = body.childElementCount;
+    if (l < 10) {
+        setTimeout(mk_dot(), 0);
+    }
 });
 // 연습중
 
 setTimeout(function repeat_work() {
-    mk_dot();
-
+    let l = body.childElementCount;
+    if (l < 10) {
+        mk_dot();
+    }
     setTimeout(repeat_work, 5000);
 }, 5000);

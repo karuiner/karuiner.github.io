@@ -14,7 +14,7 @@ function mk_dot() {
     ndot.style.animationTimingFunction = "ease-out";
     let t = 2 + Math.random() * 2;
     ndot.style.animation = `move ${t}s ease-out`;
-    ndot.style.transition = `top,left, ${t}s`;
+    ndot.style.transition = `all ${t}s`;
     setTimeout(move_and_explosion, 1000, ndot, t);
     body.append(ndot);
 }
@@ -37,7 +37,7 @@ function mk_fragment(target, r) {
     n_frag.style.borderRadius = "50%";
     n_frag.style.animation = `5s ease-out fade`;
     n_frag.style.animationTimingFunction = "ease-out";
-    n_frag.style.transition = "5s";
+    n_frag.style.transition = "all 5s";
     let theta = Math.random() * 2 * Math.PI;
     let x = r * Math.cos(theta),
         y = r * Math.sin(theta);
@@ -57,7 +57,7 @@ function explosion(target) {
         setTimeout(mk_fragment, 0, target, r);
         setTimeout(mk_fragment, 0, target, r);
     }
-    target.style.transition = `0.1s`;
+    target.style.transition = `all 0.1s`;
     target.style.backgroundColor = "white";
     setTimeout(dying_light, 5000, target);
 }

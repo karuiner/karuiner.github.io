@@ -12,7 +12,7 @@ function mk_dot() {
     ndot.style.borderRadius = "50%";
     ndot.style.left = `${20 + Math.random() * 60}%`;
     ndot.style.animationTimingFunction = "ease-out";
-    let t = 3 + Math.random() * 3;
+    let t = 2 + Math.random() * 2;
     ndot.style.animation = `move ${t}s ease-out`;
     ndot.style.transition = `top,left, ${t}s`;
     setTimeout(move_and_explosion, 1000, ndot, t);

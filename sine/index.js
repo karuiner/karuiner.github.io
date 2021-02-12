@@ -15,8 +15,9 @@ function mk_cicle(timestamp) {
         target.classList.add("circle");
         target.style.borderColor = "#" + get_rgb_random_color();
         // 랜덤 반경 추가
-        maxr = 10 + Math.random() * 60;
-        extra = (2 - Math.random()) * 15;
+        maxr = 5 + Math.random() * 100;
+        extra = (2 - Math.random()) * 20;
+        target.style.borderWidth = `${0.05 * maxr}px`;
         target.style.height = "0px";
         target.style.width = "0px";
         target.style.position = "fixed";
@@ -32,7 +33,7 @@ function mvsine(timestamp) {
     for (let i of target_list) {
         [target, birthtime, extra, maxr] = i;
         x = ((timestamp - (birthtime - start)) % 20000) / 20000;
-        y = 70 + 20 * Math.sin(2 * Math.PI * x) - extra - 10 + 10 * x;
+        y = 80 + 20 * Math.sin(2 * Math.PI * x) - extra - 10 + 20 * x;
         if (x <= 0.1 || x >= 0.9) {
             cr = x <= 0.1 ? x * 10 : (1.0 - x) * 10;
             cr = cr >= 0 ? cr : 0;

@@ -19,7 +19,7 @@ function mk_cicle(timestamp) {
         extra = (2 - Math.random()) * 15;
         target.style.height = "0px";
         target.style.width = "0px";
-        target.style.position = "absolute";
+        target.style.position = "fixed";
         // target.style.zIndex = zorder;
         // zorder -= 1;
         main.append(target);
@@ -48,6 +48,14 @@ function mvsine(timestamp) {
             target.style.height = `${maxr}px`;
             target.style.width = `${maxr}px`;
         }
+
+        if (x > 0.05 && target.style.diplay === "none") {
+            target.style.diplay = "";
+        } else if (x > 0.95 && target.style.diplay === "") {
+            x = x > 0.95 ? 0.95 : x;
+            target.style.diplay = "none";
+        }
+
         if (x >= 0.05 || x <= 0.95) {
             target.style.setProperty("transform", "translate(" + x * 100 + "vw," + y + "vh)");
         }

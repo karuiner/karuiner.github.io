@@ -15,7 +15,7 @@ function mk_dot() {
     let t = 3 + Math.random() * 3;
     ndot.style.animation = `move ${t}s ease-out`;
     ndot.style.transition = `top,left, ${t}s`;
-    setTimeout(move_and_explosion, t * 1000, ndot, t);
+    setTimeout(move_and_explosion, 1000, ndot, t);
     body.append(ndot);
 }
 function move_and_explosion(target, t) {
@@ -35,9 +35,9 @@ function mk_fragment(target) {
     n_frag.style.background = "#" + get_rgb_random_color();
     n_frag.style.position = "absolute";
     n_frag.style.borderRadius = "50%";
-    n_frag.style.animation = `10s ease-out fade`;
+    n_frag.style.animation = `5s ease-out fade`;
     n_frag.style.animationTimingFunction = "ease-out";
-    n_frag.style.transition = "10s";
+    n_frag.style.transition = "5s";
     let r = 100;
     let theta = Math.random() * 2 * Math.PI;
     let x = r * Math.cos(theta),
@@ -57,7 +57,7 @@ function explosion(target) {
     }
     target.style.transition = `0.1s`;
     target.style.backgroundColor = "white";
-    setTimeout(dying_light, 10000, target);
+    setTimeout(dying_light, 5000, target);
 }
 
 function dying_light(target) {

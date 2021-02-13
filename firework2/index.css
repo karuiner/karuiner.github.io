@@ -35,3 +35,35 @@ body {
     width: 3px;
     border-radius: 50%;
 }
+
+.color1 {
+    background: rgb(255, 95, 95);
+}
+
+.color2 {
+    background: rgb(255, 167, 95);
+}
+
+.color3 {
+    background: rgb(244, 255, 95);
+}
+
+.color4 {
+    background: rgb(159, 255, 95);
+}
+
+.color5 {
+    background: rgb(95, 255, 162);
+}
+
+.color6 {
+    background: rgb(95, 255, 162);
+}
+
+.color7 {
+    background: rgb(95, 231, 255);
+}
+
+.color8 {
+    background: rgb(95, 164, 255);
+}

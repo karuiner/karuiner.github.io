@@ -7,15 +7,15 @@ let present,
     target_list = [],
     a0 = 4,
     mote_list = [];
-color_set = ["red", "green", "yellow", "purple", "blue"];
+color_set = ["color1", "color2", "color3", "color4", "color5", "color6", "color7", "color8"];
 
 function mk_ball() {
     let ball = document.createElement("div");
-    ball.classList.add("ball");
+    ball.classList.add("ball", color_pick());
     ball.style.position = "fixed";
     ball.style.top = "100vh";
     ball.style.left = "0vw";
-    ball.style.background = color_pick();
+    //    ball.style.background = color_pick();
     pa.append(ball);
     return ball;
 }
@@ -29,9 +29,9 @@ function input_fire(target, stime) {
             nx = vx0 * t,
             ny = vy0 * t + 0.5 * a0 * t ** 2;
         if (t < 3) {
-            if (target.style.transition === "") {
-                target.style.transition = "All 0.05s";
-            }
+            // if (target.style.transition === "") {
+            //     target.style.transition = "All 0.02s";
+            // }
             target.style.transform = `translate(${nx}px,${ny}vh )`;
         } else {
             target.style.background = "black";
@@ -43,7 +43,7 @@ function input_fire(target, stime) {
 function make_inner_bomb(pnode, stime) {
     let bomb_flag = [];
 
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 500; i++) {
         let target = mk_mote(pnode),
             func;
         let v = 30,
@@ -75,9 +75,9 @@ function color_pick() {
 
 function mk_mote(pnode = pa) {
     let mote = document.createElement("div");
-    mote.classList.add("mote");
+    mote.classList.add("mote", color_pick());
     mote.style.position = "fixed";
-    mote.style.background = color_pick();
+    //    mote.style.background = color_pick();
     pnode.append(mote);
     return mote;
 }
@@ -90,12 +90,12 @@ function input_motion_in_gravity(target, stime, v, theta, phi, check = false) {
             y = vset[2] * t + 0.5 * a0 * t ** 2;
 
         if (t < 4) {
-            if (target.style.transition === "") {
-                target.style.transition = "All 0.05s";
-            }
+            // if (target.style.transition === "") {
+            //     target.style.transition = "All 0.02s";
+            // }
             target.style.opacity = 0.2 + Math.random() * 0.7;
             target.style.transform = `translate(${x}px,${y}px )`;
-        } else if (t < 12) {
+        } else if (t < 6) {
             target.style.opacity = target.style.opacity > 0.2 ? target.style.opacity * 0.7 : 0;
             target.style.transform = `translate(${x}px,${y}px )`;
         } else {

@@ -7,6 +7,12 @@
     color: #000;
 }
 
+@keyframes twinkle {
+    to {
+        opacity: 0;
+    }
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -66,4 +72,11 @@ body {
 
 .color8 {
     background: rgb(95, 164, 255);
+}
+
+.twinkle {
+    animation-duration: 0.02s;
+    animation-name: twinkle;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }

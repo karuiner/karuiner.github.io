@@ -43,12 +43,12 @@ function input_fire(target, stime) {
 function make_inner_bomb(pnode, stime) {
     let bomb_flag = [];
 
-    for (let i = 0; i < 500; i++) {
+    for (let i = 0; i < 2000; i++) {
         let target = mk_mote(pnode),
             func;
         let v = 30,
             theta = Math.PI * Math.random(),
-            phi = 2 * Math.PI * Math.random();
+            phi = 2 * Math.PI * (0.5 - Math.random());
         if (i === 0) {
             func = input_motion_in_gravity(target, stime, v, theta, phi, true);
         } else {
@@ -83,22 +83,21 @@ function mk_mote(pnode = pa) {
 }
 
 function input_motion_in_gravity(target, stime, v, theta, phi, check = false) {
-    let vset = toxyz(v, theta, phi);
+    let vset = toxyz(v, theta, phi),
+        opacity = 1;
     return function (time) {
         let t = (time - stime) / 1000,
             x = vset[1] * t,
             y = vset[2] * t + 0.5 * a0 * t ** 2;
 
-        if (t < 4) {
-            // if (target.style.transition === "") {
-            //     target.style.transition = "All 0.02s";
-            // }
-            target.style.opacity = 0.2 + Math.random() * 0.7;
-            target.style.transform = `translate(${x}px,${y}px )`;
-        } else if (t < 6) {
-            target.style.opacity = target.style.opacity > 0.2 ? target.style.opacity * 0.7 : 0;
-            target.style.transform = `translate(${x}px,${y}px )`;
+        if (Math.random() > 0.5) {
+            target.style.opacity = opacity;
         } else {
+            target.style.opacity = 0.5 * opacity;
+        }
+        opacity = opacity * 0.98;
+        target.style.transform = `translate(${x}px,${y}px )`;
+        if (t > 5) {
             if (check) {
                 target.parentElement.parentElement.removeChild(target.parentElement);
             }

@@ -40,6 +40,22 @@ function input_fire(target, stime) {
     };
 }
 
+function gaussian(x) {
+    return Math.exp(-0.5 * x ** 2) / Math.sqrt(Math.Pi * 2);
+}
+
+function gaudiv() {
+    let rany = 1,
+        x,
+        candi = 0;
+    while (candi < rany) {
+        rany = Math.random() * gaussian(0);
+        x = (Math.random() - 0.5) * 6;
+        candi = gaussian(x);
+    }
+    return x;
+}
+
 function make_inner_bomb(pnode, stime) {
     let bomb_flag = [];
 
@@ -48,6 +64,7 @@ function make_inner_bomb(pnode, stime) {
             func;
         let v = 30,
             theta = Math.PI * Math.random(),
+            // theta = Math.PI * gaudiv(),
             phi = 2 * Math.PI * (0.5 - Math.random());
         if (i === 0) {
             func = input_motion_in_gravity(target, stime, v, theta, phi, true);

@@ -41,3 +41,7 @@ aside {
     font-family: monospace;
     font-size: 1.2em;
 }
+
+.disable {
+    pointer-events: none;
+}

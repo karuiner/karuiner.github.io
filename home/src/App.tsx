@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import img from "./img/mountains.jpg";
+import Main from "./main/index";
 
 const Frame = styled.div`
   height: 100vh;
@@ -36,7 +37,7 @@ const Navi = styled.div`
   border: solid 1px black;
 `;
 
-const Main = styled.div`
+const MainF = styled.div`
   height: 100%;
   flex: 6 0 0;
   border: solid 1px black;
@@ -70,7 +71,9 @@ function App() {
       </Header>
       <Body>
         <Navi></Navi>
-        <Main></Main>
+        <MainF>
+          <Main></Main>
+        </MainF>
         <Side></Side>
       </Body>
     </Frame>

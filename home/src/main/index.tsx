@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 const Frame = styled.div`
@@ -41,11 +42,14 @@ const NumberLinkBox = styled.div`
   display: flex;
   height: 95%;
   width: 80%;
+  align-items: center;
+  justify-content: space-between;
 `;
 const LinkBox = styled.div`
   height: 40px;
   width: 40px;
   color: white;
+  cursor: pointer;
 `;
 
 const LabelBox = styled.div`
@@ -83,6 +87,12 @@ const Date = styled.div`
 `;
 
 const Main = function () {
+  const [k, setk] = useState(0);
+  let n = 55;
+  let data = Array(Math.ceil(n / 10) * 10)
+    .fill(0)
+    .map((x, i) => i + 1);
+
   return (
     <Frame>
       <Title>
@@ -104,13 +114,29 @@ const Main = function () {
       <BoardFrame></BoardFrame>
       <NumberBox>
         <NumberLinkBox>
-          <LinkBox>이전</LinkBox>
-          {Array(10)
-            .fill(1)
-            .map((x, i) => {
-              return <LinkBox key={i}>{i < 5 ? `${i + 1}` : ""}</LinkBox>;
-            })}
-          <LinkBox>이후</LinkBox>
+          <LinkBox
+            onClick={() => {
+              if (k < 10) {
+                setk(0);
+              } else {
+                setk(k - 10);
+              }
+            }}
+          >
+            이전
+          </LinkBox>
+          {data.slice(k, k + 10).map((x, i) => {
+            return <LinkBox key={i}>{x <= n ? `${x}` : ""}</LinkBox>;
+          })}
+          <LinkBox
+            onClick={() => {
+              if (k + 10 < n) {
+                setk(k + 10);
+              }
+            }}
+          >
+            이후
+          </LinkBox>
         </NumberLinkBox>
       </NumberBox>
     </Frame>

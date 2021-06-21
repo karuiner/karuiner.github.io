@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import img from "./img/mountains.jpg";
-import Main from "./main/index";
+import Blog from "./blog";
+import { Route, Switch, Link } from "react-router-dom";
 
 const Frame = styled.div`
   height: 100vh;
@@ -21,7 +22,7 @@ const Frame = styled.div`
 `;
 
 const Header = styled.div`
-  height: 100px;
+  height: 70px;
   width: 100%;
   flex: 1 0 1;
   display: flex;
@@ -29,52 +30,49 @@ const Header = styled.div`
   align-items: center;
   border: solid 1px black;
 `;
-const Navi = styled.div`
+const InnerFrame = styled.div<{ header: boolean }>`
   height: 100%;
-  flex: 2 0 0;
-  display:flex
-  overflow-y: auto;
-  border: solid 1px black;
-`;
-
-const MainF = styled.div`
-  height: 100%;
-  flex: 6 0 0;
-  border: solid 1px black;
-`;
-
-const Side = styled.div`
-  height: 100%;
-  flex: 2 0 0;
-  border: solid 1px black;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  ${(header) => (header ? "flex-direction: row-reverse;" : "")}
 `;
 
 const Body = styled.div`
   flex: 1 0 0;
   width: 100%;
-  min-width: 900px;
+  min-width: 1200px;
   display: flex;
-  flex-direction: row;
-  border: solid 1px black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
-
-const Title = styled.div`
-  flex: 1 0 1;
+const Box = styled.div`
   display: flex;
+  margin-left: 20px;
 `;
 
 function App() {
   return (
     <Frame>
       <Header>
-        <Title>공인택의 놀이터</Title>
+        <InnerFrame header={true}>
+          <Box>
+            <Link to={"/"}>돌아가기</Link>
+          </Box>
+          <Box>
+            <Link to={"/blog"}>블로그</Link>
+          </Box>
+        </InnerFrame>
       </Header>
       <Body>
-        <Navi></Navi>
-        <MainF>
-          <Main></Main>
-        </MainF>
-        <Side></Side>
+        <Switch>
+          <Route exact path={"/blog"} component={Blog}></Route>
+          <Route path={"/"}>
+            <Body></Body>
+          </Route>
+        </Switch>
       </Body>
     </Frame>
   );

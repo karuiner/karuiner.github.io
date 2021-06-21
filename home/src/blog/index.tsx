@@ -3,22 +3,12 @@ import styled from "styled-components";
 
 const Frame = styled.div`
   height: 100%;
+  max-width: 1200px;
   width: 100%;
   padding: 20px;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-`;
-const Title = styled.div`
-  height: 100px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-const Tbox = styled.div`
-  display: flex;
-  font-size: 50px;
 `;
 
 const Stbox = styled.div`
@@ -86,18 +76,15 @@ const Date = styled.div`
   align-items: center;
 `;
 
-const Main = function () {
+const Board = function () {
   const [k, setk] = useState(0);
   let n = 55;
   let data = Array(Math.ceil(n / 10) * 10)
     .fill(0)
     .map((x, i) => i + 1);
-
+  console.log(data);
   return (
     <Frame>
-      <Title>
-        <Tbox>타이틀</Tbox>
-      </Title>
       <LabelBox>
         <LabelInnerBox>
           <Number>
@@ -143,4 +130,4 @@ const Main = function () {
   );
 };
 
-export default Main;
+export default Board;

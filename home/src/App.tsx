@@ -3,6 +3,7 @@ import styled from "styled-components";
 import img from "./img/mountains.jpg";
 import Blog from "./blog";
 import { Route, Switch, Link } from "react-router-dom";
+import collection from "./collection";
 
 const Frame = styled.div`
   height: 100vh;
@@ -64,10 +65,14 @@ function App() {
           <Box>
             <Link to={"/blog"}>블로그</Link>
           </Box>
+          <Box>
+            <Link to={"/collection"}>연습 결과물</Link>
+          </Box>
         </InnerFrame>
       </Header>
       <Body>
         <Switch>
+          <Route exact path={"/collection"} component={collection}></Route>
           <Route exact path={"/blog"} component={Blog}></Route>
           <Route path={"/"}>
             <Body></Body>

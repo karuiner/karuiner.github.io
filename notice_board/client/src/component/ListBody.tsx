@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Box from "./ListBox";
 
@@ -36,27 +36,81 @@ const Body = styled.div`
 
 const Footer = styled.div`
   min-height: 50px;
-  display: felx;
+  display: flex;
   flex: 1 0 0;
   border: solid blue 1px;
   margin: 5px;
+  padding: 5px;
+`;
+
+const SBox = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+`;
+
+const NumberBox = styled.div`
+  display: flex;
+  flex: 10 0 0;
+`;
+
+const Tbox = styled.div`
+  display: flex;
 `;
 
 function ListBody() {
   let dummy = Array(100).fill(0);
+  let n = dummy.length;
+  let [k, setk] = useState(0);
+
   return (
     <Frame>
       <Header>
         <Box num={"번호"} sub={"제목"} date={"작성일자"}></Box>
       </Header>
       <Body>
-        {dummy.slice(0, 10).map((x, i) => {
+        {dummy.slice(k, k + 10).map((x, i) => {
           return (
-            <Box key={i} num={i + 1} sub={`dummy${i + 1}`} date={"test"}></Box>
+            <Box
+              key={k + i}
+              num={k + i + 1}
+              sub={`dummy${k + i + 1}`}
+              date={"test"}
+            ></Box>
           );
         })}
       </Body>
-      <Footer></Footer>
+      <Footer>
+        <SBox
+          onClick={() => {
+            let u = Math.floor(k / 10);
+            setk(u > 0 ? (u - 1) * 10 : 0);
+          }}
+        >
+          <Tbox>{"이전"}</Tbox>
+        </SBox>
+        <NumberBox>
+          {Array(10)
+            .fill(0)
+            .map((x, i) => {
+              return (
+                <SBox key={k + i + 1}>
+                  <Tbox>{`${k + i + 1}`}</Tbox>
+                </SBox>
+              );
+            })}
+        </NumberBox>
+        <SBox
+          onClick={() => {
+            let u = Math.floor(k / 10);
+            let l = Math.floor(n / 10);
+            setk(u < l - 1 ? (u + 1) * 10 : (l - 1) * 10);
+          }}
+        >
+          <Tbox>{"이후"}</Tbox>
+        </SBox>
+      </Footer>
     </Frame>
   );
 }

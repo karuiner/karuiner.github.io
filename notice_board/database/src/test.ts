@@ -1,6 +1,7 @@
 import { MongoClient } from "mongodb";
-const url =
-  "mongodb+srv://karuiner:rune8125@cluster0.rj5xw.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+import "dotenv/config";
+const url = process.env.MONGODB_URL || "";
+console.log(url, typeof url);
 const client = new MongoClient(url);
 client.connect((err) => {
   const col = client.db("sample_training").collection("posts");

@@ -3,17 +3,58 @@ import "dotenv/config";
 const url = process.env.MONGODB_URL || "";
 console.log(url, typeof url);
 const client = new MongoClient(url);
-client.connect((err) => {
-  const col = client.db("sample_training").collection("posts");
-  col
-    .findOne({ author: "machine" })
-    .then((rst) => {
-      console.log(rst);
-    })
-    .finally(() => {
-      client.close();
-    });
+
+interface Post {
+  user: string;
+  text: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+// client.connect(async (err) => {
+//   const db = client.db("test");
+//   const posts = db.collection<Post>("posts");
+//   const result = await posts.deleteMany({});
+//   console.log("Deleted " + result.deletedCount + " documents");
+// });
+
+client.connect(async (err) => {
+  const db = client.db("test");
+  const posts = db.collection<Post>("posts");
+  const result = await posts.insertOne({
+    user: "noname",
+    text: "test text",
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  });
+  console.log(`A document was inserted with the _id: ${result.insertedId}`);
+  let data = await posts.findOne({ _id: result.insertedId });
+  console.dir(data);
+  const update = await posts.updateOne(
+    { _id: result.insertedId },
+    { $set: { text: "update text", updatedAt: new Date() } }
+  );
+  console.log(
+    `${update.matchedCount} document(s) matched the filter, updated ${update.modifiedCount} document(s)`
+  );
+  data = await posts.findOne({ _id: result.insertedId });
+  console.dir(data);
+
+  const del = await posts.deleteOne({ _id: result.insertedId });
+  console.log("Deleted " + del.deletedCount + " documents");
+  await client.close();
 });
+
+// client.connect((err) => {
+//   const col = client.db("sample_training").collection("posts");
+//   col
+//     .findOne({ author: "machine" })
+//     .then((rst) => {
+//       console.log(rst);
+//     })
+//     .finally(() => {
+//       client.close();
+//     });
+// });
 
 // async function run() {
 //   try {

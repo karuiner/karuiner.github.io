@@ -21,6 +21,19 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/:id", (req, res) => {
+  res.locals.posts
+    .findOne({
+      _id: res.locals.objectid(req.params.id),
+    })
+    .then((rst: Post[]) => {
+      res.json(rst);
+    })
+    .catch((err: any) => {
+      res.send("fail");
+    });
+});
+
 router.post("/", (req, res) => {
   res.locals.posts
     .insertOne({
@@ -39,14 +52,12 @@ router.post("/", (req, res) => {
 });
 
 router.patch("/:id", (req, res) => {
-  console.log();
   res.locals.posts
     .updateOne(
-      { _id: `${res.locals.objectid(req.params.id)}` },
+      { _id: res.locals.objectid(req.params.id) },
       { $set: { text: "update text", updatedAt: new Date() } }
     )
     .then((rst: any) => {
-      console.dir(rst);
       res.send("updated data");
     })
     .catch((err: any) => {
@@ -56,7 +67,7 @@ router.patch("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   res.locals.posts
-    .deleteOne({ _id: req.params.id })
+    .deleteOne({ _id: res.locals.objectid(req.params.id) })
     .then((rst: any) => {
       res.send("delete complete");
     })

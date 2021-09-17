@@ -4,16 +4,25 @@ const router = express.Router();
 
 interface Post {
   user: string;
+  subject: string;
   text: string;
   createdAt: Date;
   updatedAt: Date;
 }
 
 router.get("/", (req, res) => {
-  let data = res.locals.posts.find();
+  let data = res.locals.posts.find(
+    {},
+    {
+      projection: {
+        text: 0,
+        updatedAt: 0,
+      },
+    }
+  );
   data
     .toArray()
-    .then((rst: Post[]) => {
+    .then((rst: any[]) => {
       res.json(rst);
     })
     .catch((err: any) => {

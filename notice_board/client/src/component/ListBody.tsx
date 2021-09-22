@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Box from "./ListBox";
+import axios from "axios";
 
 const Frame = styled.div`
   width: 100%;
@@ -59,9 +60,23 @@ const Tbox = styled.div`
   display: flex;
 `;
 
+interface Post_l {
+  _id: object;
+  user: string;
+  subject: string;
+  createdAt: Date;
+}
+
 function ListBody() {
-  let dummy = Array(100).fill(0);
-  let n = dummy.length;
+  let [data, setdata] = useState<Post_l[]>([]);
+
+  if (data.length === 0) {
+    axios.get(process.env.REACT_APP_SERVER + "/post").then((rst) => {
+      console.log(rst.data);
+      setdata(rst.data);
+    });
+  }
+  let n = data.length;
   let [k, setk] = useState(0);
 
   return (
@@ -70,7 +85,7 @@ function ListBody() {
         <Box num={"번호"} sub={"제목"} date={"작성일자"}></Box>
       </Header>
       <Body>
-        {dummy.slice(k, k + 10).map((x, i) => {
+        {data.slice(k, k + 10).map((x, i) => {
           return (
             <Box
               key={k + i}
@@ -103,9 +118,11 @@ function ListBody() {
         </NumberBox>
         <SBox
           onClick={() => {
-            let u = Math.floor(k / 10);
-            let l = Math.floor(n / 10);
-            setk(u < l - 1 ? (u + 1) * 10 : (l - 1) * 10);
+            if (n > 9) {
+              let u = Math.floor(k / 10);
+              let l = Math.floor(n / 10);
+              setk(u < l - 1 ? (u + 1) * 10 : (l - 1) * 10);
+            }
           }}
         >
           <Tbox>{"이후"}</Tbox>

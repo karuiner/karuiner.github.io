@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { data } from "./data";
 import ListBody from "./component/ListBody";
 
 const Frame = styled.div`
@@ -21,14 +20,8 @@ const Body = styled.div`
   align-items: center;
 `;
 
-const TextBox = styled.div`
-  display: flex;
-`;
-
 function App() {
-  const inputRef = React.useRef<HTMLInputElement>(null);
-
-  console.log(inputRef);
+  console.log(process.env);
   return (
     <Frame>
       <Body>

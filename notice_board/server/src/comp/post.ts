@@ -10,6 +10,12 @@ interface Post {
   updatedAt: Date;
 }
 
+interface Post_l {
+  user: string;
+  subject: string;
+  createdAt: Date;
+}
+
 router.get("/", (req, res) => {
   let data = res.locals.posts.find(
     {},
@@ -22,7 +28,7 @@ router.get("/", (req, res) => {
   );
   data
     .toArray()
-    .then((rst: any[]) => {
+    .then((rst: Post_l[]) => {
       res.json(rst);
     })
     .catch((err: any) => {

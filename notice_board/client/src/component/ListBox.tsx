@@ -5,7 +5,6 @@ const Frame = styled.div`
   display: flex;
   flex: 1 0 0;
   margin: 5px;
-  border: solid red 1px;
 `;
 
 const Num = styled.div`

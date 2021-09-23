@@ -17,9 +17,7 @@ const Header = styled.div`
   display: flex;
   flex: 1 0 0;
   border: solid red 1px;
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;
   padding: 5px;
 `;
 
@@ -59,6 +57,10 @@ const NumberBox = styled.div`
 const Tbox = styled.div`
   display: flex;
 `;
+const Bbox = styled.div`
+  width: 100%;
+  border: solid black 1px;
+`;
 
 interface Post_l {
   _id: object;
@@ -81,10 +83,11 @@ function ListBody() {
 
   return (
     <Frame>
-      <Header>
-        <Box num={"번호"} sub={"제목"} date={"작성일자"}></Box>
-      </Header>
+      <Header></Header>
       <Body>
+        <Bbox>
+          <Box num={"번호"} sub={"제목"} date={"작성일자"}></Box>
+        </Bbox>
         {data.slice(k, k + 10).map((x, i) => {
           return (
             <Box

@@ -100,7 +100,7 @@ function ListBody() {
             return x !== undefined ? (
               <Box
                 key={k + i}
-                num={k + i + 1}
+                num={n - (k + i)}
                 sub={x.subject}
                 user={x.user}
                 date={`${x.createdAt}`.split("T")[0]}

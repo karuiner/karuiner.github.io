@@ -20,6 +20,7 @@ router.get("/", (req, res) => {
   let data = res.locals.posts.find(
     {},
     {
+      sort: { createdAt: -1 },
       projection: {
         text: 0,
         updatedAt: 0,

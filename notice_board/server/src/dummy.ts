@@ -17,14 +17,16 @@ client.connect(async (err) => {
   const posts = db.collection<Post>("posts");
   let users = ["user1", "user2", "user3", "user4"];
   let data: Post[] = [];
+  let time = Date.now();
   for (let i = 0; i < 123; i++) {
     let k = Math.floor(Math.random() * 4);
+    time += (Math.random() * 24 * 60 + 1) * 60000;
     data.push({
       user: users[k === 4 ? 3 : k],
       text: `main text ${i}`,
       subject: `subject ${i}`,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: new Date(time),
+      updatedAt: new Date(time),
     });
   }
 

@@ -86,15 +86,23 @@ function ListBody() {
       <Header></Header>
       <Body>
         <Bbox>
-          <Box num={"번호"} sub={"제목"} date={"작성일자"}></Box>
+          <Box
+            num={"번호"}
+            sub={"제목"}
+            user={"작성자"}
+            date={"작성일자"}
+          ></Box>
         </Bbox>
         {data.slice(k, k + 10).map((x, i) => {
+          console.log(`${x.createdAt}`.split("T")[0]);
+
           return (
             <Box
               key={k + i}
               num={k + i + 1}
-              sub={`dummy${k + i + 1}`}
-              date={"test"}
+              sub={x.subject}
+              user={x.user}
+              date={`${x.createdAt}`.split("T")[0]}
             ></Box>
           );
         })}

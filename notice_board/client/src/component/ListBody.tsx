@@ -93,19 +93,22 @@ function ListBody() {
             date={"작성일자"}
           ></Box>
         </Bbox>
-        {data.slice(k, k + 10).map((x, i) => {
-          console.log(`${x.createdAt}`.split("T")[0]);
-
-          return (
-            <Box
-              key={k + i}
-              num={k + i + 1}
-              sub={x.subject}
-              user={x.user}
-              date={`${x.createdAt}`.split("T")[0]}
-            ></Box>
-          );
-        })}
+        {Array(10)
+          .fill(0)
+          .map((p, i) => {
+            let x = data[k + i];
+            return x !== undefined ? (
+              <Box
+                key={k + i}
+                num={k + i + 1}
+                sub={x.subject}
+                user={x.user}
+                date={`${x.createdAt}`.split("T")[0]}
+              ></Box>
+            ) : (
+              <Box></Box>
+            );
+          })}
       </Body>
       <Footer>
         <SBox
@@ -129,10 +132,10 @@ function ListBody() {
         </NumberBox>
         <SBox
           onClick={() => {
-            if (n > 9) {
+            if (n > 10) {
               let u = Math.floor(k / 10);
               let l = Math.floor(n / 10);
-              setk(u < l - 1 ? (u + 1) * 10 : (l - 1) * 10);
+              setk(u < l ? (u + 1) * 10 : l * 10);
             }
           }}
         >

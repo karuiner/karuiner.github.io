@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Box from "./ListBox";
 import axios from "axios";
+import HeaderBox from "./HeaderBox";
 
 const Frame = styled.div`
   width: 100%;
@@ -64,6 +65,7 @@ const Bbox = styled.div`
 
 interface Post_l {
   _id: object;
+  no: number;
   user: string;
   subject: string;
   createdAt: Date;
@@ -83,7 +85,9 @@ function ListBody() {
 
   return (
     <Frame>
-      <Header></Header>
+      <Header>
+        <HeaderBox></HeaderBox>
+      </Header>
       <Body>
         <Bbox>
           <Box
@@ -100,7 +104,7 @@ function ListBody() {
             return x !== undefined ? (
               <Box
                 key={k + i}
-                num={n - (k + i)}
+                num={x.no}
                 sub={x.subject}
                 user={x.user}
                 date={`${x.createdAt}`.split("T")[0]}

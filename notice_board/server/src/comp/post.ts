@@ -37,6 +37,48 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/subject", (req, res) => {
+  let data = res.locals.posts.find(
+    {},
+    {
+      sort: { subject: 1, createdAt: -1 },
+      projection: {
+        text: 0,
+        updatedAt: 0,
+      },
+    }
+  );
+  data
+    .toArray()
+    .then((rst: Post_l[]) => {
+      res.json(rst);
+    })
+    .catch((err: any) => {
+      res.send("fail");
+    });
+});
+
+router.get("/user", (req, res) => {
+  let data = res.locals.posts.find(
+    {},
+    {
+      sort: { user: 1, createdAt: -1 },
+      projection: {
+        text: 0,
+        updatedAt: 0,
+      },
+    }
+  );
+  data
+    .toArray()
+    .then((rst: Post_l[]) => {
+      res.json(rst);
+    })
+    .catch((err: any) => {
+      res.send("fail");
+    });
+});
+
 router.get("/:id", (req, res) => {
   res.locals.posts
     .findOne({

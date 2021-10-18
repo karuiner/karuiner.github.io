@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 const Frame = styled.div`
   display: flex;
@@ -47,21 +48,35 @@ interface box {
   sub?: string;
   user?: string;
   date?: string;
+  setdata?: any;
 }
+const base = () => {
+  console.log("test");
+};
 
-function ListBox({ num, sub, user, date }: box) {
+const sortf = (func: any, adr: string) => {
+  return () => {
+    if (func !== null) {
+      axios.get(process.env.REACT_APP_SERVER + "/post" + adr).then((rst) => {
+        func(rst.data);
+      });
+    }
+  };
+};
+
+function ListBox({ num, sub, user, date, setdata = null }: box) {
   return (
     <Frame>
       <Num>
         <Tbox>{num ? num : ""} </Tbox>
       </Num>
-      <Subject>
+      <Subject onClick={sortf(setdata, "/subject")}>
         <Tbox>{sub ? sub : ""}</Tbox>
       </Subject>
-      <User>
+      <User onClick={sortf(setdata, "/user")}>
         <Tbox>{user ? user : ""}</Tbox>
       </User>
-      <Date>
+      <Date onClick={sortf(setdata, "")}>
         <Tbox>{date ? date : ""}</Tbox>
       </Date>
     </Frame>

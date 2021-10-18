@@ -80,6 +80,14 @@ function ListBody() {
       setdata(rst.data);
     });
   }
+  const subf = (func: any) => {
+    return () => {
+      axios.get(process.env.REACT_APP_SERVER + "/post/subject").then((rst) => {
+        func(rst.data);
+      });
+    };
+  };
+
   let n = data.length;
   let [k, setk] = useState(0);
 
@@ -95,6 +103,7 @@ function ListBody() {
             sub={"제목"}
             user={"작성자"}
             date={"작성일자"}
+            setdata={setdata}
           ></Box>
         </Bbox>
         {Array(10)

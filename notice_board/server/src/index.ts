@@ -3,7 +3,8 @@ import * as bodyParser from "body-parser";
 import { MongoClient, ObjectId } from "mongodb";
 import cors from "cors";
 import "dotenv/config";
-import post from "./comp/post";
+import text from "./comp/text";
+import search from "./comp/search";
 
 interface Post {
   user: string;
@@ -26,7 +27,8 @@ client
       res.locals.posts = client.db("test").collection<Post>("posts");
       next();
     });
-    app.use("/post", post);
+    app.use("/text", text);
+    app.use("/search", search);
 
     app.listen(process.env.APP_PORT, () => {
       console.log("server running");

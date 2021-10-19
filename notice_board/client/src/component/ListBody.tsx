@@ -75,18 +75,11 @@ function ListBody() {
   let [data, setdata] = useState<Post_l[]>([]);
 
   if (data.length === 0) {
-    axios.get(process.env.REACT_APP_SERVER + "/post").then((rst) => {
-      console.log(rst.data);
+    axios.get(process.env.REACT_APP_SERVER + "/text").then((rst) => {
+      //console.log(rst.data);
       setdata(rst.data);
     });
   }
-  const subf = (func: any) => {
-    return () => {
-      axios.get(process.env.REACT_APP_SERVER + "/post/subject").then((rst) => {
-        func(rst.data);
-      });
-    };
-  };
 
   let n = data.length;
   let [k, setk] = useState(0);

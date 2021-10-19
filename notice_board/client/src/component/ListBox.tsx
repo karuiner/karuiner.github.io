@@ -57,7 +57,7 @@ const base = () => {
 const sortf = (func: any, adr: string) => {
   return () => {
     if (func !== null) {
-      axios.get(process.env.REACT_APP_SERVER + "/post" + adr).then((rst) => {
+      axios.get(process.env.REACT_APP_SERVER + "/text" + adr).then((rst) => {
         func(rst.data);
       });
     }

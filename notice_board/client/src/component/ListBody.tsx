@@ -87,7 +87,7 @@ function ListBody() {
   return (
     <Frame>
       <Header>
-        <HeaderBox></HeaderBox>
+        <HeaderBox setdata={setdata}></HeaderBox>
       </Header>
       <Body>
         <Bbox>
